@@ -1,0 +1,69 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282C34;
+    padding: 0;
+    margin: 0;
+
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+}
+button{
+    position: relative;
+    width: 300px;
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 96px;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 12px 36px rgba(0,0,0,.1);
+
+}
+button::before{
+    content: "GÖKKÜŞAĞI";
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: white;
+    backdrop-filter: blur(24px);
+}
+button::after{
+    content: "";
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    z-index: -1;
+    background: conic-gradient(
+        #ff4d4d,
+        #cd84f1,
+        #c56cf0,
+        #18dcff,
+        #32ff7e,
+        #fff200,
+        #ff9f1a,
+        #ff4d4d
+    );
+}
+button:hover::after{
+    animation: spin 3s linear infinite;
+}
+@keyframes spin{
+    100%{
+        transform: rotate(360deg);
+    }
+}
